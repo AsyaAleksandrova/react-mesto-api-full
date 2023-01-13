@@ -8,6 +8,7 @@ const NotFoundError = require('./errors/NotFoundError');
 const validateNewUser = require('./middlewares/validateNewUser');
 const validateAuth = require('./middlewares/validateAuth');
 const errorHandler = require('./middlewares/errorhandler');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 3000 } = process.env;
 
@@ -22,6 +23,8 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
 });
 
+app.use(requestLogger);
+
 app.post('/signup', validateNewUser, createUser);
 app.post('/signin', validateAuth, login);
 
@@ -31,6 +34,8 @@ app.use('/', auth, require('./routes/cards'));
 app.use((req, res, next) => {
   next(new NotFoundError('Не корректно задан адрес запроса'));
 });
+
+app.use(errorLogger);
 
 app.use(errors());
 
