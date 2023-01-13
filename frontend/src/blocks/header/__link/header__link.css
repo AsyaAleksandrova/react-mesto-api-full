@@ -1,0 +1,13 @@
+.header__link {
+   margin: 0;
+   font-weight: 400;
+   color: #ffffff;
+   text-decoration: none;
+   align-self: center;
+   justify-self: flex-end;
+   margin-right: 44px;
+}
+
+.header__link:hover{
+   opacity: 0.6;
+}

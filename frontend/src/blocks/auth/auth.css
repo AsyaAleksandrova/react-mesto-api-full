@@ -1,0 +1,22 @@
+.auth{
+   margin: 40px 30px;
+   width: calc(100% - 60px);
+   height: calc(100vh - 85.4px - 80px);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+@media screen and (min-width: 514px) {
+   .auth {
+      margin: 40px auto;
+      width: 358px;
+   }
+}
+
+@media screen and (min-width: 758px) {
+   .auth {
+      margin: 60px auto 80px;
+      height: calc(100vh - 120px - 140px);
+   }
+}

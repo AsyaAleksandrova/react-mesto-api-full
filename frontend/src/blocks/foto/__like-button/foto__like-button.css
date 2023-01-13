@@ -1,0 +1,17 @@
+.foto__like-button {
+  border: none;
+  width: 22px;
+  height: 19px;
+  background-color: #ffffff;
+  background-image: url(../../../images/Heart_white.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  -webkit-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.foto__like-button:hover {
+  opacity: 0.5;
+}

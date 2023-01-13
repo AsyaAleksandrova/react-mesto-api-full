@@ -1,0 +1,16 @@
+.auth__button {
+   width: 100%;
+   height: 46px;
+   font-size: 16px;
+   line-height: 19px;
+}
+
+@media screen and (min-width: 758px) {
+   .auth__button {
+      height: 50px;
+   }
+}
+
+.auth__button:hover{
+   opacity: 0.85;
+}

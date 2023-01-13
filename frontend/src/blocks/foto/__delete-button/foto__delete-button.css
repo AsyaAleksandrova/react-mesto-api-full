@@ -1,0 +1,21 @@
+.foto__delete-button{
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   width: 18px;
+   height: 19px;
+   border: none;
+   background-image: url(../../../images/Delete.svg);
+   background-color: rgba(0, 0, 0, 0);
+   background-repeat: no-repeat;
+   background-size: contain;
+   cursor: pointer;
+   -webkit-transition: all 0.7s ease;
+   -o-transition: all 0.7s ease;
+   transition: all 0.7s ease;
+   display: none;
+}
+
+.foto__delete-button:hover{
+   opacity: 0.6;
+}

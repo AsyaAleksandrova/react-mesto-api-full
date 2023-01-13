@@ -1,0 +1,18 @@
+.profile__info {
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .profile__info {
+    width: calc(100vw - 169.5px - 150px - 100px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .profile__info {
+    width: calc(100vw - 169.5px - 150px - 200px);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .profile__info {
+    width: 560.5px;
+  }
+}

@@ -1,0 +1,19 @@
+.footer {
+  padding: 0 19px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 0 50px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer {
+    padding: 0 100px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer {
+    padding: 0 200px;
+  }
+}
