@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
-const JWT_STRING = 'Nsl8TZXJzSYmL7TC5v5fRSaUPrUMas4TAap0NKqjqnaH3Q+0gSETQRRQz/3FYxW1zsQ8FC6QkwS2ZM4+auHH42C+dkbF1aA';
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const MONGO_DUPLICATE_ERROR_CODE = 11000;
 const OtherServerError = require('../errors/OtherServerError');
@@ -84,7 +84,7 @@ module.exports.login = (req, res, next) => {
         if (!compare) {
           next(new AuthError(MESSAGE_AUTH));
         } else {
-          const token = jwt.sign({ _id: user._id }, JWT_STRING, { expiresIn: '7d' });
+          const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
           res.status(200).send({ token });
         }
       }))
