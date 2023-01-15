@@ -16,7 +16,7 @@ const { PORT = 3000 } = process.env;
 
 const app = express();
 app.use(cors({
-  origin: ['http://api.asya.nomoredomains.rocks'],
+  origin: ['http://api.asya.nomoredomains.rocks', 'https://localhost:3000'],
   credentials: true,
 }));
 
