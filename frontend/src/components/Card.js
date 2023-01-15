@@ -5,7 +5,7 @@ function Card({card, onCardClick, onCardLike, onCardDelete }) {
    const currentUser = React.useContext(CurrentUserContext);
    const [countLikes, setCountLikes] = useState(card.likes.length);
    const [isLiked, setIsLiked] = useState(card.likes.some(i => i._id === currentUser._id));
-   const classNameDeleteButton = `foto__delete-button ${card.owner._id===currentUser._id && 'foto__delete-button_active'}`;
+   const classNameDeleteButton = `foto__delete-button ${card.owner===currentUser._id && 'foto__delete-button_active'}`;
    const classNameLikeButton = `foto__like-button ${isLiked && 'foto__like-button_active'}`;
 
    React.useEffect(() => {
