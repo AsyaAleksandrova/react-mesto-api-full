@@ -26,6 +26,7 @@ module.exports.createCard = (req, res, next) => {
   Card
     .create({ name, link, owner })
     .populate('owner')
+    .populate('likes')
     .then((card) => {
       res.status(200).send(card);
     })
