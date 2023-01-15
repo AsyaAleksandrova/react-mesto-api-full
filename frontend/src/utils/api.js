@@ -1,7 +1,7 @@
 class Api {
   constructor(options) {
      this._url = options.baseUrl;
-     this._pass = options.pass;
+     this._pass = localStorage.getItem('jwt');
      this._headers = {
          authorization: this._pass,
      }
@@ -110,6 +110,5 @@ class Api {
 }
 
 export const api = new Api({
-   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-42',
-   pass: '42c1e004-7873-4b0c-9174-75a2f76131ee'
+   baseUrl: 'http://api.asya.nomoredomains.rocks'
 });

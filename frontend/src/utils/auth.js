@@ -1,6 +1,6 @@
 
 
-export const BASE_URL = 'https://auth.nomoreparties.co';
+export const BASE_URL = 'http://api.asya.nomoredomains.rocks';
 
 export const register = (password, email) => {
    return fetch(`${BASE_URL}/signup`, {
