@@ -9,6 +9,7 @@
    justify-self: flex-end;
    margin-right: 44px;
    transition: all 0.7s ease-in-out;
+   cursor: pointer;
 }
 
 .header__burger_open{

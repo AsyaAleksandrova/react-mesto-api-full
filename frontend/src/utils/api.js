@@ -110,5 +110,5 @@ class Api {
 }
 
 export const api = new Api({
-   baseUrl: 'http://api.asya.nomoredomains.rocks'
+   baseUrl: 'https://api.asya.nomoredomains.rocks'
 });

@@ -1,9 +1,9 @@
 .profile__edit-button {
   position: absolute;
-  left: 120px;
+  left: 320px;
   bottom: 5px;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   background-color: rgba(0, 0, 0, 0);
   background-image: url(../../../images/point.svg);
   background-size: 50%;
@@ -15,19 +15,13 @@
   -o-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .profile__edit-button {
-    left: 312px;
-    width: 24px;
-    height: 24px;
+    left: 200px;
+    width: 18px;
+    height: 18px;
   }
 }
 .profile__edit-button:hover {
   opacity: 0.6;
-}
-
-@media screen and (min-width: 396px) {
-  .profile__edit-button {
-    left: 199px;
-  }
 }

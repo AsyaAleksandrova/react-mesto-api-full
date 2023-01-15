@@ -152,6 +152,7 @@ function App() {
     auth.checkToken(token)
       .then((data) => {
         setCurrentLogin({ ...currentLogin, email: data.email, _id: data._id });
+        getAppData();
         setLoggedIn(true);
         history.push('/');
       })

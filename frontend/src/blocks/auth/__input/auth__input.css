@@ -1,4 +1,5 @@
 .auth__input {
+   min-height: 35px;
    background-color: transparent;
    border: none;
    border-bottom: 1px solid #ffffff;
@@ -6,4 +7,10 @@
    box-sizing: border-box;
    margin: 0 0 30px;
    color: #ffffff;
+}
+
+.auth__input:active, .auth__input:hover, .auth__input:focus {
+   outline: 0;
+   outline-offset: 1px;
+   outline: 1px solid #ffffff;
 }

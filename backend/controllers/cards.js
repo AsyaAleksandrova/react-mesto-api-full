@@ -10,6 +10,8 @@ const MESSAGE_VALIDATION_ID = 'Переданые некорректные да�
 module.exports.getCards = (req, res, next) => {
   Card
     .find({})
+    .populate('owner')
+    .populate('likes')
     .then((cards) => {
       res.status(200).send(cards);
     })
@@ -23,6 +25,7 @@ module.exports.createCard = (req, res, next) => {
   const owner = req.user._id;
   Card
     .create({ name, link, owner })
+    .populate('owner')
     .then((card) => {
       res.status(200).send(card);
     })
