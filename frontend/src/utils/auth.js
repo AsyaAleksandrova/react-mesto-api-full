@@ -42,8 +42,8 @@ export const checkToken = (token) => {
    })
       .then((response => response.json()))
       .then((data) => {
-         if (data.data.email) {
-            return data.data;
+         if (data.email) {
+            return data;
       }
    })
 };

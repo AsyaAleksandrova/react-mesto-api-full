@@ -17,7 +17,7 @@ module.exports.getUsers = (req, res, next) => {
   User
     .find({})
     .then((users) => {
-      res.status(200).send({ data: users });
+      res.status(200).send(users);
     })
     .catch((err) => {
       next(new OtherServerError(`Что-то пошло не так: ${err.message}`));
@@ -29,7 +29,7 @@ module.exports.getUserById = (req, res, next) => {
     .findById(req.params.userId)
     .orFail()
     .then((user) => {
-      res.status(200).send({ data: user });
+      res.status(200).send(user);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
@@ -46,7 +46,7 @@ module.exports.getMyUser = (req, res, next) => {
   User
     .findById(req.user._id)
     .then((user) => {
-      res.status(200).send({ data: user });
+      res.status(200).send(user);
     })
     .catch((err) => {
       next(new OtherServerError(`Что-то пошло не так: ${err.message}`));
@@ -58,9 +58,7 @@ module.exports.createUser = (req, res, next) => {
     .then((hash) => User.create({ ...req.body, password: hash }))
     .then((user) => {
       res.status(201).send({
-        data: {
-          name: user.name, about: user.about, avatar: user.avatar, email: user.email, _id: user._id,
-        },
+        name: user.name, about: user.about, avatar: user.avatar, email: user.email, _id: user._id,
       });
     })
     .catch((err) => {
@@ -106,7 +104,7 @@ module.exports.updateUserInfo = (req, res, next) => {
       { new: true, runValidators: true },
     )
     .then((user) => {
-      res.status(200).send({ data: user });
+      res.status(200).send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
@@ -126,7 +124,7 @@ module.exports.updateUserAvatar = (req, res, next) => {
       { new: true, runValidators: true },
     )
     .then((user) => {
-      res.status(200).send({ data: user });
+      res.status(200).send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

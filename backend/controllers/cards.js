@@ -11,7 +11,7 @@ module.exports.getCards = (req, res, next) => {
   Card
     .find({})
     .then((cards) => {
-      res.status(200).send({ data: cards });
+      res.status(200).send(cards);
     })
     .catch((err) => {
       next(new OtherServerError(`Что-то пошло не так: ${err.message}`));
@@ -24,7 +24,7 @@ module.exports.createCard = (req, res, next) => {
   Card
     .create({ name, link, owner })
     .then((card) => {
-      res.status(200).send({ data: card });
+      res.status(200).send(card);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
@@ -60,7 +60,7 @@ module.exports.deleteCard = (req, res, next) => {
   Card
     .findByIdAndRemove(req.params.cardId)
     .then((card) => {
-      res.status(200).send({ data: card });
+      res.status(200).send(card);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
@@ -82,7 +82,7 @@ module.exports.likeCard = (req, res, next) => {
     .populate('owner')
     .populate('likes')
     .then((card) => {
-      res.status(200).send({ data: card });
+      res.status(200).send(card);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
@@ -106,7 +106,7 @@ module.exports.dislikeCard = (req, res, next) => {
     .populate('owner')
     .populate('likes')
     .then((card) => {
-      res.status(200).send({ data: card });
+      res.status(200).send(card);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
