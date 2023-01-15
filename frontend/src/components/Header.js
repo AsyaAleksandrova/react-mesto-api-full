@@ -36,8 +36,8 @@ function Header({ loggedIn, currentLogin, logOut }) {
             }             
             {!loggedIn &&
             <a className='header__link'
-               href={path == "/sign-up" ? '/sign-in' : '/sign-up'}>
-               {path == "/sign-up" ? "Войти" : "Регистрация"}
+               href={path === "/sign-up" ? '/sign-in' : '/sign-up'}>
+               {path === "/sign-up" ? "Войти" : "Регистрация"}
             </a>}  
       </header>      
    )

@@ -5,7 +5,7 @@ function ImagePopup(props) {
    const [isOpen, setIsOpen] = useState(false);
 
    useEffect(() => {
-      if (props.card.link == '') {
+      if (props.card.link === '') {
          setIsOpen(false);
       } else {
          setIsOpen(true)

@@ -6,7 +6,7 @@ function DeleteCardPopup({ onClose, card, onAccept }) {
    const [btnName, setBtnName] = useState('Да');
 
    useEffect(() => {
-      if (card.id == '') {
+      if (card.id === '') {
          setIsOpen(false);
       } else {
          setIsOpen(true)
