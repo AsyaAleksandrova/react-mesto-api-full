@@ -10,6 +10,7 @@ const MESSAGE_VALIDATION_ID = 'Переданые некорректные да�
 module.exports.getCards = (req, res, next) => {
   Card
     .find({})
+    .sort({ createdAt: -1 })
     .populate('likes')
     .then((cards) => {
       res.status(200).send(cards);
@@ -80,7 +81,6 @@ module.exports.likeCard = (req, res, next) => {
       { new: true },
     )
     .orFail()
-    .populate('owner')
     .populate('likes')
     .then((card) => {
       res.status(200).send(card);
@@ -104,7 +104,6 @@ module.exports.dislikeCard = (req, res, next) => {
       { new: true },
     )
     .orFail()
-    .populate('owner')
     .populate('likes')
     .then((card) => {
       res.status(200).send(card);
